@@ -1,0 +1,16 @@
+build:
+  stage: build
+  image: python:3.12
+  script:
+    - apt-get update -qy
+    - apt-get -qy update
+    - apt-get -y install python3-pip
+
+
+
+RunningUnitTests:
+  stage: test
+  image: python:3.12
+  script:
+    - pip3 install pytest
+    - pytest Test*.py
